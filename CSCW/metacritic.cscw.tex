@@ -1,5 +1,5 @@
-\documentclass[letterpaper]{article}
-%\documentclass{chi2009}
+%\documentclass[letterpaper]{article}
+\documentclass{chi2009}
 
 %\usepackage{aaai}
 %\usepackage{times}
@@ -34,7 +34,7 @@
 
 \pdfinfo{
 /Title (How Do Professional and Amateur Reviewers Differ?)
-/Subject (AAAI Publications)
+/Subject (anonymous)
 /Author (anonymous)}
 \setcounter{secnumdepth}{0}  
 \begin{document}
@@ -69,7 +69,7 @@
 
 \markright{\today}
 
-\title{Crowds and Critics: How Professional and \\Amateur Reviews
+\title{Crowds and Critics: How Professional and \\ [0.5ex]Amateur Reviews
 Differ on Metacritic}
 \author{
 %anonymous\\
@@ -174,16 +174,21 @@ implications this work has for CMC theory and for practical
 issues, such as combining reviews from professionals and amateurs.
 
 \section{Related Work}
-Technologies like wikis, blogs, discussion forums, and online review venues have enabled new distributed forms of knowledge production, information sharing, social support, and opinion aggregation. People read movie critics' reviews of new films; now Netflix and Amazon recommend movies based on what fellow moviegoers like. Subject matter experts wrote encyclopedias; now there is Wikipedia. People with health conditions went to doctors; now there's PatientsLikeMe. 
+Technologies like wikis, blogs, discussion forums, and online review
+venues have enabled new distributed forms of knowledge production,
+information sharing, social support, and opinion aggregation \cite{Benkler2006Wealth}. People read movie critics' reviews of new films; now Netflix and Amazon recommend movies based on what fellow moviegoers like. Subject matter experts wrote encyclopedias; now there is Wikipedia. People with health conditions went to doctors; now there's PatientsLikeMe. 
 
-Across these examples amateurs have proven valuable. 
+In addition to these commercial examples, amateurs have proven valuable
+across many domains, providing insight and creative energy to fields as diverse as astronomy, mathematics and animation \cite{cooper2010predicting,cranshaw2011polymath,kanefsky2001can,luther2013redistributing}.
 However, professionals have traditionally provided many of these services, prompting the question: what value are professionals in these systems?
 %Wikipedia offers a case in point. There is significant ongoing controversy about the role of subject matter experts: are external credentials relevant? Should a PhD give you special editing privileges? Historically the answer has been ``no'', although there are recent moves away from this position (Wikipedia Public Policy Initiative 2010). 
 %Larry Sanger, a Wikipedia co-founder, has been critical of this position, arguing in favor of finding a role for accredited experts (Sanger 2009). He started his own online encyclopedia to pursue this approach (Citizendium.org).  
 %More recently, the Association for Psychological Science has begun an effort to encourage and guide academic psychologists to edit Wikipedia articles about psychological topics (APS Initiative). 
 Efforts have varied in how they integrate professionals with amateurs.
 Several prominent Citizen Science projects feature distinct roles for professionals (scientists) and amateurs (citizens/laypeople). For example, birders participating in the eBird project enter their observations of birds. Then, ``automated data quality filters developed by regional bird experts review all submissions'' and ``local experts review unusual records that are flagged by the filters'' \cite{sullivan2009ebird}.
-On the Encyclopedia of Life anyone can contribute but materials from unvetted contributors are initially marked as unreviewed. EOL curators are ``professional scientists'' and `experienced citizen scientists'' who have applied and been approved \cite{encyclopediaoflife}. 
+On the Encyclopedia of Life anyone can contribute but materials from
+unvetted contributors are initially marked as unreviewed. EOL curators
+are ``professional scientists'' and ``experienced citizen scientists'' who have applied and been approved \cite{encyclopediaoflife}. 
 Metacritic aggregates review scores from a selected set of professional reviewers for movies, games, television, and music. These review scores are compiled into an aggregate ``metascore'' that measures the overall quality of a product. Amateurs may also post reviews to the site that are displayed alongside these professional reviews, but are not counted toward the overall metascore of a title.
 
 Quantifying the value of amateur activities is a challenging task. 
@@ -204,8 +209,12 @@ Plucker et al. compare student, online novice, and professional film reviewers, 
 Earlier studies of online reviewing examined amateur reviewers in terms of their motivations for reviewing \cite{gilbert2010deja,diakopoulos2011news-discourse,xu2012critique} and characteristic language used in videogame reviews in particular \cite{zagal2011natural}. We complement this work through an assessment of the differences between professional and amateur reviewers through examining review volume, score, and sentiment rating in a linear model that allows direct comparison of predictive power. Further, our analysis of review text and score distributions provides in-depth insight into how professional and amateur reviews differ. Rather than characterize amateur reviewer traits in isolation we seek to understand how they compare against professionals.
 
 Our work broadens previous analyses of videogame sales that have been limited to smaller subsets of games or sources for review data. Ehrenfeld's thesis found volume of game mentions on the NeoGAF online game discussion forum is predictive of game weekly sales in a support vector regression model \cite{ehrenfeld2011predicting}. Marcoux and Selouani employed an autoregressive neural network model to predict games sales from review scores, volume, and related features using data from the IGN videogame news and reviews website after first performing nonlinear transformations of the model data \cite{marcoux2009hybrid}.
-Compared to these approaches we examine a much larger set of games,
-\footnote{Ehrenfeld does not report the number of games used in his analysis, but limits to data over the course of 42 weeks of releases, which is a subset of our total corpus spanning 425 weeks. Marcoux and Selouani examine 74 games, while we examine 860 or 600, depending on the model.}
+Compared to these approaches we examine a much larger set of
+games\footnote{Ehrenfeld does not report the number of games used in his
+analysis, but limits to data over the course of 42 weeks of releases,
+which is a subset of our total corpus spanning 425 weeks. Marcoux and
+Selouani examine 74 games, while we examine 860 or 600, depending on the
+model.},
 compare professional and amateur reviews, and draw from a longer-term and larger set of reviews that aggregate over websites. Our results are directly interpretable in terms of relative feature impact in linear models.
 
 
