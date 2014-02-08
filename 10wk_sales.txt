@@ -1,0 +1,394 @@
+=== both critics + users ====
+
+
+Call:
+lm(formula = logsale_10wk ~ num_score, data = revsale.agg.10wk)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.0943 -0.8995  0.0000  0.8540  4.3665 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 11.27725    0.06609 170.646  < 2e-16 ***
+num_score    0.05480    0.00651   8.418 2.83e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.335 on 598 degrees of freedom
+  (362 observations deleted due to missingness)
+Multiple R-squared: 0.106,	Adjusted R-squared: 0.1045 
+F-statistic: 70.87 on 1 and 598 DF,  p-value: 2.83e-16 
+
+
+Call:
+lm(formula = logsale_10wk ~ num_score + authortype, data = revsale.agg.10wk)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.3460 -0.8072 -0.0666  0.9414  4.6047 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    11.009915   0.088822 123.955  < 2e-16 ***
+num_score       0.064543   0.006779   9.521  < 2e-16 ***
+authortypeuser  0.509356   0.115166   4.423 1.16e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.315 on 597 degrees of freedom
+  (362 observations deleted due to missingness)
+Multiple R-squared: 0.1343,	Adjusted R-squared: 0.1314 
+F-statistic: 46.31 on 2 and 597 DF,  p-value: < 2.2e-16 
+
+
+Call:
+lm(formula = logsale_10wk ~ num_score + authortype + console, 
+    data = revsale.agg.10wk)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2751 -0.7504 -0.0073  0.8179  4.2718 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    11.28041    0.18076  62.405  < 2e-16 ***
+num_score       0.06100    0.00653   9.342  < 2e-16 ***
+authortypeuser  0.48909    0.11807   4.142 3.94e-05 ***
+consoleps3     -0.09471    0.19332  -0.490  0.62438    
+consolexbox360  0.07296    0.18907   0.386  0.69974    
+console3ds     -0.75989    0.26498  -2.868  0.00428 ** 
+consoleds      -0.66209    0.24830  -2.667  0.00787 ** 
+consolevita    -1.61688    0.33649  -4.805 1.96e-06 ***
+consolepsp     -0.95961    0.23998  -3.999 7.17e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.249 on 591 degrees of freedom
+  (362 observations deleted due to missingness)
+Multiple R-squared: 0.2268,	Adjusted R-squared: 0.2164 
+F-statistic: 21.67 on 8 and 591 DF,  p-value: < 2.2e-16 
+
+=== critics only ===
+Call:
+lm(formula = logsale_10wk ~ num_score, data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.2204 -0.9366 -0.0747  0.9623  4.5791 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 11.050756   0.090582 121.997  < 2e-16 ***
+num_score    0.059460   0.007024   8.465 7.18e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.327 on 349 degrees of freedom
+  (297 observations deleted due to missingness)
+Multiple R-squared: 0.1703,	Adjusted R-squared: 0.168 
+F-statistic: 71.66 on 1 and 349 DF,  p-value: 7.18e-16 
+
+
+Call:
+lm(formula = logsale_10wk ~ num_score + console, data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.1053 -0.8023  0.0208  0.8163  4.1824 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    11.172119   0.237166  47.107  < 2e-16 ***
+num_score       0.056562   0.006707   8.434 9.43e-16 ***
+consoleps3      0.036064   0.260685   0.138  0.89005    
+consolexbox360  0.283995   0.263399   1.078  0.28170    
+console3ds     -0.614310   0.306592  -2.004  0.04589 *  
+consoleds      -0.160428   0.416661  -0.385  0.70045    
+consolevita    -1.473071   0.369409  -3.988 8.16e-05 ***
+consolepsp     -1.355289   0.416699  -3.252  0.00126 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.241 on 343 degrees of freedom
+  (297 observations deleted due to missingness)
+Multiple R-squared: 0.2871,	Adjusted R-squared: 0.2725 
+F-statistic: 19.73 on 7 and 343 DF,  p-value: < 2.2e-16 
+
+=== user only ===
+
+Call:
+lm(formula = logsale_10wk ~ num_score, data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2005 -0.6829 -0.0502  0.6616  3.3791 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 11.27754    0.10896 103.500  < 2e-16 ***
+num_score    0.16070    0.02922   5.499 9.51e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.27 on 247 degrees of freedom
+  (65 observations deleted due to missingness)
+Multiple R-squared: 0.1091,	Adjusted R-squared: 0.1055 
+F-statistic: 30.24 on 1 and 247 DF,  p-value: 9.514e-08 
+
+
+Call:
+lm(formula = logsale_10wk ~ num_score + console, data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.1264 -0.6601  0.0483  0.7632  3.1622 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    11.74624    0.24088  48.764  < 2e-16 ***
+num_score       0.13976    0.02942   4.750 3.48e-06 ***
+consoleps3     -0.31110    0.29153  -1.067  0.28697    
+consolexbox360 -0.20996    0.26843  -0.782  0.43488    
+consoleds      -0.90058    0.31607  -2.849  0.00476 ** 
+consolepsp     -0.90159    0.30345  -2.971  0.00326 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.237 on 243 degrees of freedom
+  (65 observations deleted due to missingness)
+Multiple R-squared: 0.1677,	Adjusted R-squared: 0.1506 
+F-statistic: 9.792 on 5 and 243 DF,  p-value: 1.54e-08 
+
+=== both : median score ===
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score, data = revsale.agg.10wk)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.1647 -0.9481 -0.0936  0.9368  5.2006 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   9.66487    0.24370  39.658  < 2e-16 ***
+median_score  0.24324    0.02998   8.115 2.78e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.34 on 598 degrees of freedom
+  (362 observations deleted due to missingness)
+Multiple R-squared: 0.09919,	Adjusted R-squared: 0.09768 
+F-statistic: 65.85 on 1 and 598 DF,  p-value: 2.78e-15 
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score + num_score, data = revsale.agg.10wk)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.9509 -0.8551 -0.0590  0.8012  5.1329 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  9.615460   0.232580  41.343  < 2e-16 ***
+median_score 0.214155   0.028842   7.425 3.91e-13 ***
+num_score    0.048727   0.006287   7.750 3.97e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.278 on 597 degrees of freedom
+  (362 observations deleted due to missingness)
+Multiple R-squared: 0.1815,	Adjusted R-squared: 0.1788 
+F-statistic: 66.21 on 2 and 597 DF,  p-value: < 2.2e-16 
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score + authortype, data = revsale.agg.10wk)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2089 -0.9508 -0.0974  0.9220  5.1422 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     9.64613    0.24524  39.334  < 2e-16 ***
+median_score    0.24147    0.03009   8.025 5.42e-15 ***
+authortypeuser  0.07887    0.11144   0.708    0.479    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.34 on 597 degrees of freedom
+  (362 observations deleted due to missingness)
+Multiple R-squared: 0.09995,	Adjusted R-squared: 0.09693 
+F-statistic: 33.15 on 2 and 597 DF,  p-value: 2.234e-14 
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score + num_score + console, 
+    data = revsale.agg.10wk)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2906 -0.7060 -0.0361  0.7048  4.8346 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     9.920176   0.263756  37.611  < 2e-16 ***
+median_score    0.218931   0.027855   7.860 1.83e-14 ***
+num_score       0.045680   0.006108   7.478 2.73e-13 ***
+consoleps3     -0.204499   0.185733  -1.101 0.271327    
+consolexbox360 -0.001978   0.182744  -0.011 0.991366    
+console3ds     -0.875177   0.251451  -3.481 0.000537 ***
+consoleds      -0.688278   0.239088  -2.879 0.004137 ** 
+consolevita    -1.697702   0.321500  -5.281 1.81e-07 ***
+consolepsp     -1.104198   0.232374  -4.752 2.53e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.205 on 591 degrees of freedom
+  (362 observations deleted due to missingness)
+Multiple R-squared: 0.2797,	Adjusted R-squared: 0.2699 
+F-statistic: 28.68 on 8 and 591 DF,  p-value: < 2.2e-16 
+
+=== critic only ===
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score, data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.8167 -0.8670 -0.0224  0.7618  3.9438 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   6.68602    0.40337   16.57   <2e-16 ***
+median_score  0.62121    0.05107   12.16   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.221 on 349 degrees of freedom
+  (297 observations deleted due to missingness)
+Multiple R-squared: 0.2978,	Adjusted R-squared: 0.2957 
+F-statistic:   148 on 1 and 349 DF,  p-value: < 2.2e-16 
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score + num_score, data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.9197 -0.7735 -0.0330  0.7578  4.2089 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   7.03631    0.38506  18.273  < 2e-16 ***
+median_score  0.53364    0.05010  10.651  < 2e-16 ***
+num_score     0.04137    0.00634   6.525 2.41e-10 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.154 on 348 degrees of freedom
+  (297 observations deleted due to missingness)
+Multiple R-squared: 0.3743,	Adjusted R-squared: 0.3707 
+F-statistic: 104.1 on 2 and 348 DF,  p-value: < 2.2e-16 
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score + num_score + console, 
+    data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.9441 -0.7218  0.0216  0.7028  3.8557 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     7.511590   0.414729  18.112  < 2e-16 ***
+median_score    0.492502   0.048277  10.202  < 2e-16 ***
+num_score       0.039900   0.006103   6.537 2.28e-10 ***
+consoleps3     -0.095268   0.228954  -0.416 0.677595    
+consolexbox360  0.187972   0.231162   0.813 0.416693    
+console3ds     -0.422625   0.269502  -1.568 0.117767    
+consoleds      -0.195206   0.365380  -0.534 0.593513    
+consolevita    -1.196743   0.325061  -3.682 0.000269 ***
+consolepsp     -1.438024   0.365488  -3.935 0.000101 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.088 on 342 degrees of freedom
+  (297 observations deleted due to missingness)
+Multiple R-squared: 0.4534,	Adjusted R-squared: 0.4406 
+F-statistic: 35.46 on 8 and 342 DF,  p-value: < 2.2e-16 
+
+=== user only ===
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score, data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.1718 -0.7890 -0.0412  0.7962  4.0499 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  10.97119    0.29864  36.737   <2e-16 ***
+median_score  0.08767    0.03536   2.479   0.0138 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.329 on 247 degrees of freedom
+  (65 observations deleted due to missingness)
+Multiple R-squared: 0.02428,	Adjusted R-squared: 0.02033 
+F-statistic: 6.147 on 1 and 247 DF,  p-value: 0.01383 
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score + num_score, data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.0170 -0.7396 -0.0963  0.7789  3.7993 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  10.78738    0.28616  37.698  < 2e-16 ***
+median_score  0.06286    0.03396   1.851   0.0654 .  
+num_score     0.15308    0.02937   5.212 3.96e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.264 on 246 degrees of freedom
+  (65 observations deleted due to missingness)
+Multiple R-squared: 0.1213,	Adjusted R-squared: 0.1142 
+F-statistic: 16.98 on 2 and 246 DF,  p-value: 1.235e-07 
+
+
+Call:
+lm(formula = logsale_10wk ~ median_score + num_score + console, 
+    data = tmp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2246 -0.6576 -0.0185  0.7834  3.8301 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    11.05830    0.34134  32.397  < 2e-16 ***
+median_score    0.09501    0.03385   2.807  0.00542 ** 
+num_score       0.12464    0.02951   4.224  3.4e-05 ***
+consoleps3     -0.28575    0.28764  -0.993  0.32148    
+consolexbox360 -0.24862    0.26507  -0.938  0.34920    
+consoleds      -0.97656    0.31287  -3.121  0.00202 ** 
+consolepsp     -1.04985    0.30387  -3.455  0.00065 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.22 on 242 degrees of freedom
+  (65 observations deleted due to missingness)
+Multiple R-squared: 0.1939,	Adjusted R-squared: 0.1739 
+F-statistic: 9.703 on 6 and 242 DF,  p-value: 1.417e-09 
+
