@@ -32,14 +32,12 @@
 \frenchspacing
 
 \pdfinfo{
-/Title (How Do Professional and Amateur Reviewers Differ?)
+/Title (Crowds and Critics: How Professional and Amateur Reviews Differ on Metacritic)
 /Subject (anonymous)
 /Author (anonymous)}
 \setcounter{secnumdepth}{0}  
 \begin{document}
-% The file aaai.sty is the style file for AAAI Press 
-% proceedings, working notes, and technical reports.
-%
+
 
 \skip\footins=1.5\bigskipamount     % Determine the space above the rule
 \renewcommand*{\footnoterule}{
@@ -67,6 +65,7 @@
 \brokenpenalty=10000 % penalty for breaking a word across pages
 
 \markright{\today}
+
 
 \title{Crowds and Critics: How Professional and \\ [0.5ex]Amateur Reviews
 Differ on Metacritic}
@@ -104,7 +103,6 @@ specialists compare?
 
 
 \section{Introduction}
-\vspace{6pt}
 \begin{quote}
 \small
 Do not buy this game. Do not rent this game, do not look at this game on the shelf, don't even think about this game lest someone at Ubisoft find out and they prep a Just Dance 2. Such would be the end of all things, mark my words.
@@ -137,38 +135,40 @@ widespread regard, relatively little science exists on how indicative
 these professionals' opinions are for market success. Nor do we know 
 how they differ from the opinions of ordinary consumers.
 
-In this paper, we bridge this gap by comparing professional critics and
-amateur reviewers within the context of videogame reviews. Who knows the
-market best, professionals or amateurs? Who will best predict a
+The videogame industry is a large part of contemporary entertainment, generating nearly \$21 billlion in revenue in 2012\footnote{http://www.theesa.com/facts/salesandgenre.asp}, yet has seen little scientific analysis.
+As part of an ongoing research effort to understand videogame players and consumers we compare the differences between professional critics and amateur reviewers in terms of their written videogame reviews. 
+%In this paper, we bridge this gap by comparing professional critics and amateur reviewers within the context of videogame reviews. 
+Who knows the market best, professionals or amateurs? Who will best predict a
 product's eventual success or failure? Do professionals and amateurs
 differ in their expressions of sentiment? How do professionals and
 amateurs describe products when reviewing? While previous work has
 investigated the question of predicting sales from reviews
-\cite{chevalier2003effect,dellarocas2007exploring,duan2008online,forman2008examining,gruhl2005predictive,liu2001word,yu2012mining},
+\cite{chevalier2003effect, dellarocas2007exploring, duan2008online, forman2008examining, gruhl2005predictive, liu2001word, yu2012mining},
 the differences between professionals and amateurs have received little
 attention. With this work, we believe we address a question at the heart
 of many contemporary debates: How do crowds compare to domain
 specialists and who is more effective for predicting future outcomes?
 
-We bring together a corpus of 197K reviews from 
-the review aggregator Metacritic with sales data on 7K videogames. In summary, we find that a
+We combine a corpus of 197K reviews from 
+the review aggregator Metacritic with sales data on 7K videogames. In summary, we find a
 combination of professional score, volume of professional reviews,
 and volume of amateur reviews effectively predicts game sales. Amateurs
 skew toward higher review scores than professionals, but also
 provide the main source of low review scores. That is, they show more
-variation. Amateurs and professionals also show very similar levels of
+variation. 
+Amateur and professional short review texts have very similar 
 average review subjectivity and polarity; however, amateurs tend toward
-more extreme and more varied expressions of sentiment. Finally,
-professionals and amateurs systematically differ in their language, with
+more extreme and more varied expressions of sentiment. 
+Professionals and amateurs systematically differ in their language, with
 experts focusing on market factors and amateurs focusing on
 social aspects of playing games.
 
-First, we present an overview of our corpora, characterizing the
+First, we overview of our corpora, characterizing the
 distribution of professional and amateur review scores and sentiment
 expressions. Next, we model total sales-to-date as a function of 
 professional and amateur review scores before a game's release. Finally,
 we train classifiers on review text to find key words differentiating
-professional and amateur reviews. We conclude this paper by discussing
+professional and amateur reviews. We conclude by discussing
 implications this work has for CMC theory and for practical
 issues, such as combining reviews from professionals and amateurs.
 
@@ -178,7 +178,7 @@ venues have enabled new distributed forms of knowledge production,
 information sharing, social support, and opinion aggregation \cite{Benkler2006Wealth}. People read movie critics' reviews of new films; now Netflix and Amazon recommend movies based on what fellow moviegoers like. Subject matter experts wrote encyclopedias; now there is Wikipedia. People with health conditions went to doctors; now there's PatientsLikeMe. 
 
 In addition to these commercial examples, amateurs have proven valuable
-across many domains, providing insight and creative energy to fields as diverse as astronomy, mathematics and animation \cite{cooper2010predicting,cranshaw2011polymath,kanefsky2001can,luther2013redistributing}.
+across many domains, providing insight and creative energy to fields as diverse as astronomy, mathematics and animation \cite{cooper2010predicting, cranshaw2011polymath, kanefsky2001can, luther2013redistributing}.
 However, professionals have traditionally provided many of these services, prompting the question: what value are professionals in these systems?
 %Wikipedia offers a case in point. There is significant ongoing controversy about the role of subject matter experts: are external credentials relevant? Should a PhD give you special editing privileges? Historically the answer has been ``no'', although there are recent moves away from this position (Wikipedia Public Policy Initiative 2010). 
 %Larry Sanger, a Wikipedia co-founder, has been critical of this position, arguing in favor of finding a role for accredited experts (Sanger 2009). He started his own online encyclopedia to pursue this approach (Citizendium.org).  
@@ -192,20 +192,20 @@ Metacritic aggregates review scores from a selected set of professional reviewer
 
 Quantifying the value of amateur activities is a challenging task. 
 %The increasing prevalence and ease of access to social media data has led to a rise in research predicting real-world economic, political, and other events \cite{asur2010predicting}. 
-Predicting books sales \cite{gruhl2005predictive,chevalier2003effect}, film box office sales \cite{dellarocas2007exploring,yu2012mining}, and (to a lesser extent) videogame sales \cite{ehrenfeld2011predicting,marcoux2009hybrid} from online reviews or blog chatter have all attracted attention as ways of grounding the value of amateur reviewers. In early work in this area, Gruhl et al. demonstrated blog chatter can predict spikes in book sales rank on Amazon \cite{gruhl2005predictive}. Chevalier and Mayzlin found improvements in review scores on book sales sites precede increases in book sales \cite{chevalier2003effect}. Forman, Ghose, and Wiesenfeld found that increases in product reviews including identity-descriptive information associated with subsequent increases in online book sales \cite{ghose2007designing}.
+Predicting books sales \cite{gruhl2005predictive, chevalier2003effect}, film box office sales \cite{dellarocas2007exploring, yu2012mining}, and (to a lesser extent) videogame sales \cite{ehrenfeld2011predicting, marcoux2009hybrid} from online reviews or blog chatter have all attracted attention as ways of grounding the value of amateur reviewers. In early work in this area, Gruhl et al. demonstrated blog chatter can predict spikes in book sales rank on Amazon \cite{gruhl2005predictive}. Chevalier and Mayzlin found improvements in review scores on book sales sites precede increases in book sales \cite{chevalier2003effect}. Forman, Ghose, and Wiesenfeld found that increases in product reviews including identity-descriptive information associated with subsequent increases in online book sales \cite{ghose2007designing}.
 
-Predicting box office sales has found volume of mentions on blogs or Yahoo!'s movie pre-release discussion forums can predict film box office sales \cite{liu2001word,duan2008online}. Results conflict, however, on whether review score averages are \cite{dellarocas2007exploring,hennig-thurau2012movie-reanalysis} or are not \cite{liu2001word,duan2008online} predictive of sales, beyond the power of pure volume of reviews.
+Predicting box office sales has found volume of mentions on blogs or Yahoo!'s movie pre-release discussion forums can predict film box office sales \cite{liu2001word, duan2008online}. Results conflict, however, on whether review score averages are \cite{dellarocas2007exploring, hennig-thurau2012movie-reanalysis} or are not \cite{liu2001word, duan2008online} predictive of sales, beyond the power of pure volume of reviews.
 %Hennig-Thurau et al. distinguish online review influence from predictive powers, finding reviews have a weak impact on short-term sales and a non-linear effect of higher scores disproportionately increasing long-term sales \cite{hennig-thurau2012movie-reanalysis}. We observe a similar non-linear relationship in domain of videogames.
 Sentiment has also often proven useful in predicting sales. 
-Yu et al. found sentiment expressed in blog posts can improve an autoregressive model through a carefully chosen lexicon of sentiment-laden words \cite{yu2012mining}. 
+Yu et al. found blog post sentiment expressions can improve an autoregressive model through a carefully chosen lexicon of sentiment-laden words \cite{yu2012mining}. 
 Specialized classifiers that differentiate product description text from opinion related text were shown to improve sales prediction by Ghose and Ipeirotis \cite{ghose2007designing}. 
-We address the question of review subjectivity and its relation to sales prediction and reviewer expertise, finding no strong predictive powers in the domain of videogame sales.
+We address the examine review subjectivity in relation to sales prediction and reviewer expertise, finding no strong predictive powers in the domain of videogame sales.
 
 Few of these early works explicitly examine whether and how different types of reviewers produce varying review scores. 
 Dellarocas et al. note a weak correlation between amateur and professional film reviews and find that removing professional review information (average score only) is slightly less detrimental to their model's performance than removing amateur review information (a combination of average score, number of reviews, entropy of review gender distribution, entropy of reviewer age distribution) \cite{dellarocas2007exploring}. 
 Kim et al. find frequency of online word-of-mouth mentions and expert review valence are predictive of box office sales \cite{kim2013moviewom}.
 Plucker et al. compare student, online novice, and professional film reviewers, finding greater experience watching films correlates with increased similarity to professional reviews \cite{plucker2009pro-novice-eval}. 
-Earlier studies of online reviewing examined amateur reviewers in terms of their motivations for reviewing \cite{gilbert2010deja,diakopoulos2011news-discourse,xu2012critique} and characteristic language used in videogame reviews in particular \cite{zagal2011natural}. We complement this work through an assessment of the differences between professional and amateur reviewers through examining review volume, score, and sentiment rating in a linear model that allows direct comparison of predictive power. Further, our analysis of review text and score distributions provides in-depth insight into how professional and amateur reviews differ. Rather than characterize amateur reviewer traits in isolation we seek to understand how they compare against professionals.
+Earlier studies of online reviewing examined amateur reviewers in terms of their motivations for reviewing \cite{gilbert2010deja, diakopoulos2011news-discourse, xu2012critique} and the characteristic language of videogame reviews in particular \cite{zagal2011natural}. We complement this work by assessing the differences between professional and amateur reviewers through examining review volume, score, and sentiment rating in a linear model that allows direct comparison of predictive power. Further, our analysis of review text and score distributions provides in-depth insight into how professional and amateur reviews differ. Rather than characterize amateur reviewer traits in isolation we seek to understand how they compare against professionals.
 
 Our work broadens previous analyses of videogame sales that have been limited to smaller subsets of games or sources for review data. Ehrenfeld's thesis found volume of game mentions on the NeoGAF online game discussion forum is predictive of game weekly sales in a support vector regression model \cite{ehrenfeld2011predicting}. Marcoux and Selouani employed an autoregressive neural network model to predict games sales from review scores, volume, and related features using data from the IGN videogame news and reviews website after first performing nonlinear transformations of the model data \cite{marcoux2009hybrid}.
 Compared to these approaches we examine a much larger set of
@@ -286,7 +286,7 @@ Mean squared error (MSE) values are from leave-one-out cross-validation of model
 \label{tab:regression_models}
 \end{table*}
 
-After matching game reviews to sales data using game titles and consoles, we had lifetime sales data for 6,809 games, and weekly sales for 600 games. Of the 6,809 games with lifetime sales 2,902 had both professional and amateur reviews, while 839 additionally had metascores. Metascores are only assigned when at least four professional critics approved by Metacritic have reviewed the game.
+Matching game reviews to sales data using game titles and consoles, yielded lifetime sales data for 6,809 games, and weekly sales for 600 games. Of the 6,809 games with lifetime sales 2,902 had both professional and amateur reviews, while 839 additionally had metascores. Metascores are only assigned when at least four professional critics approved by Metacritic have reviewed the game.
 
 We took a conservative approach of only keeping exact game title matches
 between Metacritic and VGChartz data without manipulating titles (e.g.,
@@ -301,10 +301,11 @@ We employed the Pattern toolkit\footnote{http://www.clips.ua.ac.be/pages/pattern
 We examined the power of review text words to classify reviewers as professionals or amateurs (labeled 0 and 1, respectively) using penalized binomial regression with a lasso penalty to favor the use of a small set of terms.
 We prepared our review texts using several standard methods from text analysis using the R programming language package tm.\footnote{http://cran.r-project.org/web/packages/tm} We removed whitespace, punctuation, numbers not part of words, and common English words. All text was lowercased and stemmed to group similar words. We tokenized the reviews into single words, requiring words be at least 3 letters long and appear in at least 10 documents. After constructing a full corpus with 86,376 terms we removed the most sparse terms to produce a set of 2,581 terms.
 
-For binomial regression we used R's glmnet package\footnote{http://cran.r-project.org/web/packages/glmnet} for generalized linear models. These models account for collinearity of terms (their frequent appearance together altering relative importance) and can control for sparsity (relative infrequency of terms). Controlling collinearity is important to prevent overweighting words that often appear together. Accounting for sparsity enables the model to exclude terms with little predictive power, yielding a smaller and more interpretable set of results. We used a lasso penalty to encourage the model to use the smallest set of terms possible. The parsed text corpus was used to examine review text but not for sales prediction---future work should explore which text features are most predictive of game sales and how they relate to reviewer types.
+For binomial regression we used R's glmnet package\footnote{http://cran.r-project.org/web/packages/glmnet} for generalized linear models. These models account for collinearity of terms (their frequent appearance together altering relative importance) and can control for sparsity (relative infrequency of terms). Controlling collinearity is important to prevent overweighting words that often appear together. Accounting for sparsity enables the model to exclude terms with little predictive power, yielding a smaller and more interpretable set of results. We used a lasso penalty to encourage the model to use the smallest set of terms possible. The parsed text corpus was used to examine review text but was not used for sales prediction---future work should explore which text features are predictive of game sales and how they relate to reviewer types.
 
-% % note: I did this but the results weren't all that interesting. might be better with bigrams + trigrams
+%% note: I did this but the results weren't all that interesting. might be better with bigrams + trigrams
 
+\pagebreak
 
 \section{Results}
 Before describing results on our prediction tasks it is important to understand the characteristics of the review and sales corpora we collected. It is not apparent \textit{a priori} how Metacritic amateurs behave compared to the professionals whose reviews are featured on the site. Below we explore how professionals and amateurs differ in aggregate scoring and review sentiment expressions.
@@ -380,8 +381,10 @@ overall subjectivity & 0.59 & 0.60 & 0.61 & 0.60 \\
 \label{fig:revscore_console}
 \end{figure}
 
+\pagebreak
+
 \subsection{Review sentiment}
-Reviewers and professionals show similar average levels of review sentiment, but differ in expressions of extreme sentiment (Figure \ref{fig:revsubj_density} and Table \ref{tab:review_pol_subj}).
+Amateurs and professionals show similar average review sentiment, but differ in expressions of extreme sentiment (Figure \ref{fig:revsubj_density} and Table \ref{tab:review_pol_subj}).
 For our analysis we considered both mean and median aggregations of
 polarity and subjectivity features over all reviews; all results
 reported were significant subject to a Wilcoxon test at p $< 0.001$, although these differences may not appear in Table \ref{tab:review_pol_subj} when rounding to two decimal places. While differences in mean and median per-review polarity and subjectivity were significant, their magnitude was small.
@@ -582,7 +585,7 @@ For each predictive task we computed all possible linear models formed from subs
 
 
 \subsubsection{Total and net 10 week sales vs pre-release reviews}
-Marketers often seek to predict sales for unreleased games relying solely on information available prior to a game's release. For this application, we examined two models that used reviews only in the 10 weeks prior to the release of a game to predict either lifetime sales-to-date or net sales over the first 10 weeks after a game releases.
+Marketers often seek to predict sales for unreleased games only using information available prior to a game's release. For this application, we examined two models that used reviews only in the 10 weeks prior to the release of a game to predict either lifetime sales-to-date or net sales over the first 10 weeks after a game releases.
 
 The BIC identified the following predictive features: median review score, number of reviews, type of review (amateur or professional), and interactions between type of reviewer and median score, number of reviews, mean of mean per-sentence review polarity and mean of mean per-sentence review subjectivity.
 %Due to the sparsity of games that possessed either professional and amateur reviews in this period (600 total) we used the same predictive features as above but with a dummy variable indicating reviewer type (professional or amateur) and adding terms to assess interaction effects between this variable and the other predictors (scores and sentiment). For example, rather than examine how mean professional scores impact sales we instead examine how scores impact sales and how this relationship is mediated by the type of reviewer providing the score. 
@@ -705,6 +708,7 @@ The metascore model is significantly different from the null model (residual dev
 %no amateurs w/more than 10 reviews + strong sales correlation. some professionals negative correlation. subset of top gets prediction to $\approx 0.308$.
 %\todo[inline]{review ``importance'' via score correlation; not needed for main story}
 
+\pagebreak
 
 \section{Review Text Classification}
 Our previous analyses show reviews are predictive of sales. But what
