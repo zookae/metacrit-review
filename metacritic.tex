@@ -83,8 +83,8 @@ Yet, we know little about how these two viewpoints compare.
 In this paper, we bridge this gap by contrasting professional and amateur reviews within the domain of videogames. 
 Examining nearly 200K reviews from the popular site Metacritic, we find professionals favor phrases describing the broader market, while amateurs emphasize experiential aspects of playing games. 
 Amateurs skew towards higher scores, but are the primary source of low scores; that is, they show more diverse opinions.% controversy. 
-However, both groups express the same average levels of sentiment.
-Finally, regressing future videogame sales on reviews, we find that a combination of professional scores, volume of professional reviews, and volume of amateur reviews provides a moderately powerful predictive model for future game sales. 
+\hspace{1pt} However, both groups express the same average levels of sentiment.
+Finally, regressing future videogame sales on reviews, we find a combination of professional scores, volume of professional reviews, and volume of amateur reviews is moderately predictive of future game sales. 
 This is the first work we know of to systematically contrast professional and amateur reviewers, addressing a question at the heart of many contemporary debates: How do crowds and domain specialists compare?
 
 \end{abstract}
@@ -109,11 +109,9 @@ the Stars, We Cheer, that other Wii game with the microphone---all terrible. Thi
 The Wii game \textit{Just Dance} released to near-universal
 critical derision. With a ``metascore'' of 49/100 based on 21
 professional reviews, the review site Metacritic gives the game its worst
-possible rating category. Yet amateur reviewers loved it---yielding an average 8/10 score over 107 ratings. And at the
-time of this writing, \textit{Just Dance} has gone on to sell 6.9M units
-and spawn a franchise with three sequels and versions on all major
-videogame platforms. While the case of \textit{Just Dance} is in many
-ways exceptional, it does suggest a question: Just how divergent are professional product reviews from amateur ones?
+possible rating category. Yet amateur reviewers loved it---yielding an average 8/10 score over 108 ratings. 
+And at the time of this writing, \textit{Just Dance} has gone on to sell 7.06M units and spawn a franchise with six sequels and versions on all major videogame platforms. 
+While the case of \textit{Just Dance} is in many ways exceptional, it does suggest a question: Just how divergent are professional product reviews from amateur ones?
 
 Particularly in the entertainment industry, the opinions of elite
 critics and journalists hold sway. Professional film critics
@@ -123,7 +121,8 @@ widespread regard, relatively little science exists on how indicative
 these professionals' opinions are for market success. Nor do we know 
 how they differ from the opinions of ordinary consumers.
 
-The videogame industry is a massive entertainment industry, generating nearly \$21 billlion in revenue in 2012\footnote{http://www.theesa.com/facts/salesandgenre.asp}, yet has seen little scientific analysis.
+The videogame industry is a massive entertainment industry, generating nearly \$21 billlion in revenue in 2012,\footnote{http://www.theesa.com/facts/salesandgenre.asp} yet has seen little scientific analysis.
+Games have not traditionally been studied among CMC researchers, but they provide a unique opportunity to understand how gaming culture compares with other media.
 As part of an ongoing research effort to understand videogame players and consumers we compare the differences between professional and amateur game reviewers using their written videogame reviews. 
 %In this paper, we bridge this gap by comparing professional critics and amateur reviewers within the context of videogame reviews. 
 Who knows the market best, professionals or amateurs? Who will best predict a
@@ -516,6 +515,8 @@ We constructed four models: predicting total sales from reviews in the 10 weeks 
 
 Review scores and volume both show clear relationships to the lifetime sales of a game (Figures \ref{fig:lifesale_revnum} and \ref{fig:lifesale_revscore}). Anecdotally, many have claimed that a metascore over 90 (9 on our rescaled range) leads to a substantial boost to game sales. Our data supports this claim when considering aggregated professional scores, although the range of relevance is broader.\footnote{We found similar trends when examining Metascores, although the dataset is limited to fewer games.} Amateur scores do not show a clear relationship to sales: increasing mean amateur review score does not appear to relate to any substantial gain in sales. By contrast, professional review scores show a clear increasing relationship, starting around scores above 60 but becoming most prominent for scores above 80. While the [95-100] category has only 25 professional reviews and thus is of dubious predictive value, the [85-90] and [90-95] categories consist of 371 and 56 reviews and thus are of greater predictive merit.
 
+\pagebreak
+
 \subsubsection{Prediction Models}
 Our models show moderately strong predictive power ($R^2$ between $0.360$ and $0.446$, MSE between $0.669$ and $0.586$) for logged sales using standardized variables (Tables \ref{tab:sales_allmodel_lm} and \ref{tab:sales_metascore_lm}). Regression results report only standardized $\beta$ coefficients significantly different from 0 ($p < 0.001$); ``n.s.'' indicates non-significant coefficients. In all cases test models had a statistically significantly ($\chi^2$ test, $p < 0.001$) smaller deviance than control models that accounted for game console, genre, and ESRB rating. Thus, all models explain variance in game sales not accounted for game market factors, showing the predictive value of Metacritic amateur and professional reviews.
 
@@ -808,6 +809,8 @@ multiplayer
 \caption{Major categories of review words distinguishing reviewers and professionals. Values in parentheses report $\beta$ coefficients from binomial regression model where positive weights predict amateurs (as opposed to professionals).}
 \label{tab:user_classification_coef}
 \end{table}
+
+\pagebreak
 
 \section{Discussion}
 Having woven much of our discussion throughout our results, we will
